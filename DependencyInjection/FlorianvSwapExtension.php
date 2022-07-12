@@ -112,8 +112,6 @@ class FlorianvSwapExtension extends Extension
             }
 
             $id = $type;
-        } else {
-            throw new InvalidArgumentException("Unexpected swap cache type '$type'.");
         }
 
         $definition = $container->getDefinition('florianv_swap.builder');
