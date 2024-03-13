@@ -29,9 +29,9 @@ class FlorianvSwapExtension extends Extension
     /**
      * {@inheritdoc}
      */
-    public function load(array $config, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
-        $config = $this->processConfiguration(new Configuration(), $config);
+        $config = $this->processConfiguration(new Configuration(), $configs);
 
         $this->configureBuilderService($container);
         $this->configureSwapService($container);
@@ -44,7 +44,7 @@ class FlorianvSwapExtension extends Extension
      *
      * @param ContainerBuilder $container
      */
-    private function configureBuilderService(ContainerBuilder $container)
+    private function configureBuilderService(ContainerBuilder $container): void
     {
         $definition = new Definition(Swap\Builder::class);
         $definition->addArgument([]);
@@ -57,7 +57,7 @@ class FlorianvSwapExtension extends Extension
      *
      * @param ContainerBuilder $container
      */
-    private function configureSwapService(ContainerBuilder $container)
+    private function configureSwapService(ContainerBuilder $container): void
     {
         $definition = new Definition(Swap\Swap::class);
         $definition->setFactory([new Reference('florianv_swap.builder'), 'build']);
@@ -71,7 +71,7 @@ class FlorianvSwapExtension extends Extension
      * @param ContainerBuilder $container
      * @param array            $config
      */
-    public function configureCacheService(ContainerBuilder $container, array $config)
+    public function configureCacheService(ContainerBuilder $container, array $config): void
     {
         if (empty($type = $config['type'])) {
             return;
@@ -128,7 +128,7 @@ class FlorianvSwapExtension extends Extension
      * @param ContainerBuilder $container
      * @param array            $providers
      */
-    public function configureProviders(ContainerBuilder $container, array $providers)
+    public function configureProviders(ContainerBuilder $container, array $providers): void
     {
         $definition = $container->getDefinition('florianv_swap.builder');
 

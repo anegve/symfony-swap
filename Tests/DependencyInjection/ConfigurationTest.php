@@ -112,7 +112,7 @@ class ConfigurationTest extends TestCase
         ]);
     }
 
-    public function provideValidProvidersConfigs(): array
+    public static function provideValidProvidersConfigs(): array
     {
         return [
             [['abstract_api' => ['api_key' => 'any']]],
@@ -160,7 +160,7 @@ class ConfigurationTest extends TestCase
         ];
     }
 
-    public function provideInvalidProvidersConfigs(): array
+    public static function provideInvalidProvidersConfigs(): array
     {
         return [
             [[]],
@@ -191,7 +191,7 @@ class ConfigurationTest extends TestCase
         ];
     }
 
-    public function provideValidCacheConfigs(): array
+    public static function provideValidCacheConfigs(): array
     {
         return [
             [[]],
@@ -199,7 +199,7 @@ class ConfigurationTest extends TestCase
         ];
     }
 
-    public function provideInvalidCacheConfigs(): array
+    public static function provideInvalidCacheConfigs(): array
     {
         return [
             [['any' => 'any']],

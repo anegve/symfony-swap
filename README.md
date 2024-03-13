@@ -31,7 +31,7 @@ Swap allows you to retrieve currency exchange rates from various services such a
 ## QuickStart
 
 ```bash
-$ composer require florianv/swap-bundle php-http/message php-http/guzzle6-adapter ^1.0
+$ composer require florianv/swap-bundle php-http/message php-http/guzzle7-adapter
 ```
 
 ## Documentation
